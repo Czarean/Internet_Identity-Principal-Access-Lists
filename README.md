@@ -1,7 +1,8 @@
 # `Internet_Identity and Principal Access Lists`
 
 On this program you can learn how to implement an Access List hashmap that will contain a list of Principal IDs(Internet Identities)  
-The Principals that are part of this Access List Hashmap will be able to call specific query and Update functions.
+-The Principals that are part of this Access List Hashmap will be able to call specific Query and Update functions.  
+-The Princials that call the functions, that are not stored on the Access List Hashmap, will be denied Access.
 
 
 Instructions:  
@@ -12,6 +13,8 @@ Instructions:
 5-With the Anonymous logged in, add the new Principal via the addPrincipal Function.  
 6-Go back to the window where the New Internet Identity is logged in, and try calling the addPrincipal, and Authgreet Functions  
 7-You now should be able to call them  
+
+`Disclaimer: This might not be the best, more efficient or optimal code to accomplish this, but this certainly does the job, I did what I could with the lil knowledge I have gathered this past few weeks, So if you have any advise or feedback please let me know, I would appreciate it a lot, Thanks.`
 
 # Any questions let me know, Ill be appy to help a fellow dev! :D  
 Im new to coding so I still suck, but I will try my best to help xD    
