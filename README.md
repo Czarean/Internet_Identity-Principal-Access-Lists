@@ -6,12 +6,12 @@ On this program you can learn how to implement an Access List hashmap that will 
 
 
 Instructions:  
-1-the Anonymous Principal is already allowd on the Access List "acl.hashmap"  
-2-The addPrincipal, and Authgreet Functions are restricted, meaning only Anonymous PID can call it!  
+1-The Anonymous Principal is already allowed on the Access List "acl.hashmap"  
+2-The `addPrincipal`, and `Authgreet` Functions are restricted, meaning only Anonymous PID can call it right off the bat! (Unless you add more PIDs via the `AddPrincipal Function`)  
 3-You can test this by login in with a new Internet Identity and try calling them, you will you cannot call them and get the error message!  
 4-Copy the Principal ID of the new Internet Identity, open a new window, and log out of the new window.  
-5-With the Anonymous logged in, add the new Principal via the addPrincipal Function.  
-6-Go back to the window where the New Internet Identity is logged in, and try calling the addPrincipal, and Authgreet Functions  
+5-With the Anonymous logged in, add the new Principal via the `addPrincipal Function`.  
+6-Go back to the window where the New Internet Identity is logged in, and try calling the `addPrincipal`, and `Authgreet` Functions  
 7-You now should be able to call them  
 
 `Disclaimer: This might not be the best, more efficient or optimal code to accomplish this, but this certainly does the job, I did what I could with the lil knowledge I have gathered this past few weeks, So if you have any advise or feedback please let me know, I would appreciate it a lot, Thanks.`
