@@ -1,7 +1,8 @@
 //Version 3.0 Working Code!
 //Principals Access List Working Code
-//This implementation ensures that only authorized principals listed in the ACL HashMap can call the Authgreet function.
-//only authorized Principals Can Add more Principals to the Access List
+//The Access list is a hashmap that stores all the authorized principals
+//This implementation ensures that only authorized principals listed in the ACL HashMap can call the Authgreet, addPrincipal, deletePrincipal functions.
+//Only authorized Principals Can Add, delete Principals to/on the Access List
 //There is a fallback mecnahnism in place, where you hardcode your deployer canister Principal ID, this is done so you can add Principals from your deployer canister using the dfx command:  $dfx canister call canister_name addPrincipal '( "exampleId", "examplePrincipal" )'
 //This is done to avoid a potential scenario where all your allowed Principals on the access list, lost access or forget their credentials. So you will be able to add new Internet Identities with no problem at all.
 
@@ -26,7 +27,7 @@ actor myactorname{
 //Fallback: As a security and Anti-lock mechanism, you should whitelist the deployer canister PID as shown in lines below
 //Doing this will allow your deployer canister to call all the functions so you can add/delete PIDs from the access list.
 //To get your deployer canister ID, use the dfx command: $dfx identity get-principal
-//And replace it on the below two lines of code: Once you do this, you do not have to worry if All Principals on the Access List stop having access because they forgot their credentials or whatever, you can just simply direct your Admins to create new Internet Identities, and then you can add the new Principal IDs to the Access list via the DFX Command: $dfx canister call canister_name addPrincipal '( "exampleId", "examplePrincipal" )'
+//And replace it on the below two lines of code: Once you do this, you do not have to worry if all Principals on the Access List stop having access because they forgot their credentials or whatever, you can just simply direct your Admins to create new Internet Identities, and then you can add the new Principal IDs to the Access list via the DFX Command: $dfx canister call canister_name addPrincipal '( "exampleId", "examplePrincipal" )'
   let canisterIdPid: PrincipalSet = "xmrjp-ypfwv-gzymg-q35zv-tphew-xq6l7-k6kp3-nprrw-pmd4q-6vk2s-oqe";
   acl.put("xmrjp-ypfwv-gzymg-q35zv-tphew-xq6l7-k6kp3-nprrw-pmd4q-6vk2s-oqe" , canisterIdPid);
 
@@ -64,6 +65,20 @@ actor myactorname{
       };
       case (null) { 
         return "You are not authorized to add principals to the Access List";
+      }
+    }
+  };
+
+  //*Restricted Function* that deletes principals from the Access list Hashmap.
+  public shared(msg) func deletePrincipal(delete: Text) : async Text {
+    let callerPrincipal = Principal.toText(msg.caller); 
+    switch (acl.get(callerPrincipal)) {
+      case (?principalSet) {
+        acl.delete(delete);
+        return "Principal ID "  # delete # " has been deleted from the Principals Access list"
+      };
+      case (null) { 
+          return "You are not authorized to delete principals from the Principals Access List";
       }
     }
   };
