@@ -1,10 +1,9 @@
 //Version 3.0 Working Code!
 //Principals Access List Working Code
 //This implementation ensures that only authorized principals listed in the ACL HashMap can call the Authgreet function.
-//Also only authorized Principals Can Add more Principals to the Access List
-//**On my next code I should add the default configuration so the Canister Itself can add and remove Principal IDs by default as a Fallback 
-//**directly from the DFX Shell with DFX Commands, this is just In case the current Admins loose access, acting as a fallback
-//**Its easy to do this you just need to uncomment Line 53 and you are good to go, the explanation is there as well. Hope this helps!
+//only authorized Principals Can Add more Principals to the Access List
+//There is a fallback mecnahnism in place, where you hardcode your deployer canister Principal ID, this is done so you can add Principals from your deployer canister using the dfx command:  $dfx canister call canister_name addPrincipal '( "exampleId", "examplePrincipal" )'
+//This is done to avoid a potential scenario where all your allowed Principals on the access list, lost access or forget their credentials. So you will be able to add new Internet Identities with no problem at all.
 
 import Principal "mo:base/Principal";
 import Text "mo:base/Text";
