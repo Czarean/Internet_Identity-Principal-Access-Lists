@@ -12,7 +12,7 @@ Instructions:
 4-Copy the Principal ID of the new Internet Identity, open a new window, and log out of the new window.  
 5-With the Anonymous logged in, add the new Principal via the `addPrincipal Function`.  
 6-Go back to the window where the New Internet Identity is logged in, and try calling the `addPrincipal`, and `Authgreet` Functions  
-7-You now should be able to call them  
+7-You now should be able to call the restricted functions  `addPrincipal`, and `Authgreet`.  
 
 `Disclaimer: This might not be the best, more efficient or optimal code to accomplish this, but this certainly does the job, I did what I could with the lil knowledge I have gathered this past few weeks, So if you have any advise or feedback please let me know, I would appreciate it a lot, Thanks.`
 
