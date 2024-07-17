@@ -14,7 +14,7 @@ Instructions:
 6-Go back to the window where the New Internet Identity is logged in, and try calling the `addPrincipal`, and `Authgreet` Functions  
 7-You now should be able to call the restricted functions  `addPrincipal`, and `Authgreet`.  
 
-`Disclaimer: This might not be the best, more efficient or optimal code to accomplish this, but this certainly does the job, I did what I could with the lil knowledge I have gathered this past few weeks, So if you have any advise or feedback please let me know, I would appreciate it a lot, Thanks.`
+`Note: This might not be the best, more efficient or optimal code to accomplish this, but this certainly does the job, I did what I could with the lil knowledge I have gathered this past few weeks, So if you have any advise or feedback please let me know, I would appreciate it a lot, Thanks.`
 
 # Any questions let me know, Ill be appy to help a fellow dev! :D  
 Im new to coding so I still suck, but I will try my best to help xD    
