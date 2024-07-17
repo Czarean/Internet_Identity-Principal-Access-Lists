@@ -22,6 +22,7 @@ actor myactorname{
   let anonymousPid: PrincipalSet = "2vxsx-fae";
   acl.put("2vxsx-fae" , anonymousPid);
 
+//Replace the Principal, if you want to hardcode a Principal to be automatically added onto the Hashmap. I.E you can use the Canister Principal to allow your Canister to call the Function from the DFX command Line.
   let testPid: PrincipalSet = "6m3mt-saeju-ijgiz-2etk7-75qpa-edcqd-ygqdh-m44fd-ihups-ksm44-cqe";
   acl.put("6m3mt-saeju-ijgiz-2etk7-75qpa-edcqd-ygqdh-m44fd-ihups-ksm44-cqe" , testPid);
 
